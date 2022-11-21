@@ -1,17 +1,20 @@
 import { Button } from "antd-mobile";
+import React from "react";
+import { LocaleContext } from "..";
 
 export const BottomButton = (props) => {
+  const locale = React.useContext(LocaleContext);
   return (
     <>
       <div className="btns">
         <div className="btn">
           <Button block color="primary" fill="solid" onClick={props.onSubmit}>
-            登录
+            {locale.login}
           </Button>
         </div>
         <div className="btn">
           <Button block color="primary" fill="outline" onClick={props.request}>
-            注册
+            {locale.signIn}
           </Button>
         </div>
       </div>
