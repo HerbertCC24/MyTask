@@ -1,6 +1,6 @@
-import { Button, Dialog, Form, Input, Space } from "antd-mobile";
-// import { json } from "stream/consumers";
+import { Form, Input } from "antd-mobile";
 import { ping, qryLogin, restfulLogin, json } from "../utils/request";
+import { BottomButton } from "./components/bottomButton";
 const request = async () => {
   const msg = await ping();
 };
@@ -22,20 +22,7 @@ export default () => {
         layout="horizontal"
         mode="card"
         form={form}
-        footer={
-          <div className="btns">
-            <div className="btn">
-              <Button block color="primary" fill="solid" onClick={onSubmit}>
-                登录
-              </Button>
-            </div>
-            <div className="btn">
-              <Button block color="primary" fill="outline" onClick={request}>
-                注册
-              </Button>
-            </div>
-          </div>
-        }
+        footer={<BottomButton onSubmit={onSubmit} request={request} />}
       >
         <Form.Header>卡片模式及分组</Form.Header>
         <Form.Item name="username" label="用户名">
@@ -45,7 +32,6 @@ export default () => {
           <Input placeholder="请输入密码" clearable type="password" />
         </Form.Item>
       </Form>
-
       <style global jsx>{`
         * {
           margin: 0;
