@@ -50,15 +50,6 @@ export default () => {
             height: 100vh;
             background: #eee;
           }
-          .btns {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-          .btn {
-            margin: 0 4px;
-            width: 100%;
-          }
         `}
       </style>
     </div>

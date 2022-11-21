@@ -1,4 +1,8 @@
 export const enString = {
-    submit: "submit",
-    
-}
+  login: "login",
+  signIn: "signIn",
+};
+export const chString = {
+  login: "登录",
+  signIn: "注册",
+};
