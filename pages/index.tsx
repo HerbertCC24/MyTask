@@ -27,12 +27,7 @@ export default () => {
           layout="horizontal"
           mode="card"
           form={form}
-          footer={
-            <BottomButton
-              onSubmit={onSubmit}
-              request={request}
-            />
-          }
+          footer={<BottomButton onSubmit={onSubmit} request={request} />}
         >
           <Form.Header>卡片模式及分组</Form.Header>
           <Form.Item name="username" label="用户名">
@@ -42,11 +37,16 @@ export default () => {
             <Input placeholder="请输入密码" clearable type="password" />
           </Form.Item>
         </Form>
-        <Button
-          onClick={() =>
-            locale === cnString ? setLocale(enString) : setLocale(cnString)
-          }
-        >切换语言</Button>
+        <div className="switch-language">
+          <Button
+            className="switch-language-button"
+            onClick={() =>
+              locale === cnString ? setLocale(enString) : setLocale(cnString)
+            }
+          >
+            {locale.switch}
+          </Button>
+        </div>
         <style global jsx>{`
           * {
             margin: 0;
@@ -64,6 +64,11 @@ export default () => {
             .bg {
               height: 100vh;
               background: #eee;
+            }
+            .switch-language {
+              width: 95%;
+              text-align: right;
+              padding-right: 16px;
             }
           `}
         </style>
