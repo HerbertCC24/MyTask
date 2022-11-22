@@ -1,44 +1,48 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-node_modules
-node_modules
+# build output
+dist
 .next
-.next
+target
+packages/next/wasm/@next
+
 # dependencies
-**/node_modules
-**/.next
-# roadhog-api-doc ignore
-/src/utils/request-temp.js
-_roadhog-api-doc
-
-# production
-/dist
-
-# misc
-.DS_Store
-npm-debug.log*
-yarn-error.log
-
-/coverage
-.idea
-yarn.lock
+node_modules
 package-lock.json
-pnpm-lock.yaml
-*bak
+yarn.lock
+!/yarn.lock
+test/node_modules
 
-
-# visual studio code
-.history
+# logs & pids
 *.log
-functions/*
-.temp/**
+pids
+*.cpuprofile
 
-# umi
-.umi
-.umi-production
+# coverage
+.nyc_output
+coverage
 
-# screenshot
-screenshot
-.firebase
-.eslintcache
+# test output
+test/**/out*
+test/**/next-env.d.ts
+.DS_Store
+/e2e-tests
+test/tmp/**
 
-build
+# Editors
+**/.idea
+**/.#*
+.nvmrc
+
+# examples
+examples/**/out
+examples/**/.env*.local
+
+pr-stats.md
+test-timings.json
+
+# Vercel
+.vercel
+.now
+
+# Cache
+*.tsbuildinfo
+.swc/
