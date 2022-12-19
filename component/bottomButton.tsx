@@ -1,6 +1,6 @@
 import { Button } from "antd-mobile";
 import React from "react";
-import { LocaleContext } from "..";
+import { LocaleContext } from "../pages";
 
 export const BottomButton = (props) => {
   const locale = React.useContext(LocaleContext);
